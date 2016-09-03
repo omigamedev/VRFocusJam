@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Dumbion.ma
-//Last modified: Sat, Sep 03, 2016 07:29:14 PM
+//Last modified: Sat, Sep 03, 2016 09:30:18 PM
 //Codeset: 1252
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -13,13 +13,13 @@ fileInfo "osv" "Microsoft Windows 8 Enterprise Edition, 64-bit  (Build 9200)\n";
 createNode transform -s -n "persp";
 	rename -uid "319FCD71-498A-CEEF-B74C-7FA89B4B3994";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.952624281673883 8.3126070883875762 -17.130747615413878 ;
-	setAttr ".r" -type "double3" 345.26164723548339 1579.3999999997977 0 ;
+	setAttr ".t" -type "double3" 22.331170666712861 8.8708738217306937 12.697792826818484 ;
+	setAttr ".r" -type "double3" 345.26164723548328 1502.199999999659 1.7048916104831488e-015 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E4EF771C-400B-E67F-F71F-AE80D88D11F4";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 24.329724759530286;
+	setAttr ".coi" 26.524123237702248;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -16493,6 +16493,10 @@ createNode mesh -n "DumbionShapeOrig" -p "Dumbion";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "Foot_L_CTR";
 	rename -uid "CC112F73-4471-03D9-8589-35BFE764CF43";
+	setAttr ".s" -type "double3" 1 1 1 ;
+	setAttr -av ".sx";
+	setAttr -av ".sy";
+	setAttr -av ".sz";
 createNode nurbsCurve -n "Foot_L_CTRShape" -p "Foot_L_CTR";
 	rename -uid "026F7F2A-4AB3-46E7-F46C-33A85EAF35D0";
 	setAttr -k off ".v";
@@ -16508,6 +16512,10 @@ createNode ikHandle -n "ikHandle1" -p "Foot_L_CTR";
 	setAttr ".roc" yes;
 createNode transform -n "Foot_R_CTR";
 	rename -uid "B6673869-4CC4-5FC6-9738-3888B36DA82F";
+	setAttr ".s" -type "double3" 1 1 -1 ;
+	setAttr -av ".sx";
+	setAttr -av ".sy";
+	setAttr -av ".sz";
 createNode nurbsCurve -n "Foot_R_CTRShape" -p "Foot_R_CTR";
 	rename -uid "004DB909-4DA4-DEE1-2CCE-EFB81DB05D26";
 	setAttr -k off ".v";
